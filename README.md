@@ -47,12 +47,7 @@ public class CustomApplication : Application
         base.OnCreate();
 
         // Initialize UCE_Handler Library
-        new UCEHandler.Builder(this)
-            .SetUCEHEnabled(true)
-            .SetTrackActivitiesEnabled(true)
-            .SetBackgroundModeEnabled(true)
-            .AddCommaSeparatedEmailAddresses("test@gmail.com")
-            .Build();
+        new UCEHandler.Builder(this).Build();
     }
 }
 ```
