@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>Com.Rohitss.Uceh.UCEHandler</id>
+    <version>1.0.7</version>
+    <title>Handling Uncaught-Exceptions in Android</title>
+    <authors>Rohit Surwase</authors>
+    <owners>Yauheni Pakala</owners>
+    <licenseUrl>https://github.com/wcoder/Xamarin.UCE-Handler/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/wcoder/Xamarin.UCE-Handler</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+    Android library which lets you take control of Android App's uncaught exceptions. View, Copy, Share, Save and Email exceptions details including other useful info easily.
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>Android library which lets you take control of Android App's uncaught exceptions.</summary>
+    <tags>xamarin, android, handling, exceptions</tags>
+  </metadata>
+  <files>
+
+	<!--Xamarin.Android-->
+	<file src="..\src\UCEHandler\bin\Release\UCEHandler.*" target="lib\MonoAndroid10" />
+
+  </files>
+</package>
