@@ -1,6 +1,7 @@
 
 #Ignore thumbnails created by Windows
 Thumbs.db
+
 #Ignore files built by Visual Studio
 *.obj
 *.exe
@@ -28,8 +29,13 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 .vs/
+
 #Nuget packages folder
 packages/
+
+# Build process
+/build/tools/
+/build/build.ps1
+/build/build.sh
 .artefacts
 *.nupkg
-/build/tools/

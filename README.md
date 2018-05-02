@@ -78,13 +78,6 @@ AddCommaSeparatedEmailAddresses("abc@gmail.com, pqr@gmail.com,...) | empty | Add
 * [**Rohit Surwase**](https://github.com/RohitSurwase) - *Initial work* - [API-Calling-Flow](https://github.com/RohitSurwase/API-Calling-Flow) , [AndroidDesignPatterns](https://github.com/RohitSurwase/AndroidDesignPatterns) , [News App Using Kotlin, MVP](https://github.com/RohitSurwase/News-Kotlin-MVP) ,  [Linkaive - Android App on Play Store](https://play.google.com/store/apps/details?id=com.rohitss.saveme)
 * [**Yauheni Pakala**](https://github.com/wcoder) - Binding library for Xamarin.Android
 
-## Development
-
-Publishing new version:
-```
-.\build.ps1 --target=Publish --NugetApiKey=<api-key> --PublishRemotely=true
-```
-
 ## License
 
 Copyright © 2018 Rohit Sahebrao Surwase.

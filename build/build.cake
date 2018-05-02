@@ -8,10 +8,10 @@ var nuspecName = "Com.Rohitss.Uceh.UCEHandler.nuspec";
 var slnPath = "../example/UCEHandlerApp.sln";
 
 Task("Build")
-	.Does(() =>
+    .Does(() =>
 {
-	NuGetRestore(slnPath);
-	DotNetBuild(slnPath, x => x
+    NuGetRestore(slnPath);
+    DotNetBuild(slnPath, x => x
         .SetConfiguration(configuration)
         .SetVerbosity(Verbosity.Minimal)
         .WithTarget("build")
@@ -20,37 +20,37 @@ Task("Build")
 });
 
 Task("Pack")
-	.IsDependentOn("Build")
-	.Does(()=> 
+    .IsDependentOn("Build")
+    .Does(()=>
 {
-	var packageDir = @"..\package";
-	var artefactsDir = @"..\.artefacts";
+    var packageDir = @"..\package";
+    var artefactsDir = @"..\.artefacts";
 
-	EnsureDirectoryExists(packageDir);
-	CleanDirectory(packageDir);
+    EnsureDirectoryExists(packageDir);
+    CleanDirectory(packageDir);
 
-	EnsureDirectoryExists(artefactsDir);
-	CleanDirectory(artefactsDir);
-	
-	CopyFiles(@"..\src\bin\" + configuration + @"\*.dll", artefactsDir);
-	CopyFiles(@"..\src\bin\" + configuration + @"\*.pdb", artefactsDir);
-	CopyFileToDirectory(@"..\nuget\" + nuspecName, artefactsDir);
+    EnsureDirectoryExists(artefactsDir);
+    CleanDirectory(artefactsDir);
 
-	NuGetPack(new FilePath(artefactsDir + @"\" + nuspecName), new NuGetPackSettings
-	{
-		OutputDirectory = packageDir
-	});
+    CopyFiles(@"..\src\bin\" + configuration + @"\*.dll", artefactsDir);
+    CopyFiles(@"..\src\bin\" + configuration + @"\*.pdb", artefactsDir);
+    CopyFileToDirectory(@"..\nuget\" + nuspecName, artefactsDir);
+
+    NuGetPack(new FilePath(artefactsDir + @"\" + nuspecName), new NuGetPackSettings
+    {
+        OutputDirectory = packageDir
+    });
 });
 
 Task("Publish")
-	.IsDependentOn("Pack")
-	.WithCriteria(publishRemotely)
-	.Does(()=> 
+    .IsDependentOn("Pack")
+    .WithCriteria(publishRemotely)
+    .Does(()=>
 {
-	NuGetPush(GetFiles(@"..\package\*.nupkg").First(), new NuGetPushSettings {
-    	Source = "https://api.nuget.org/v3/index.json",
-    	ApiKey = nugetApiKey
- 	});
+    NuGetPush(GetFiles(@"..\package\*.nupkg").First(), new NuGetPushSettings {
+        Source = "https://api.nuget.org/v3/index.json",
+        ApiKey = nugetApiKey
+     });
 });
 
 RunTarget(target);
