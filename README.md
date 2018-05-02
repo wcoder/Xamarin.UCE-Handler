@@ -1,4 +1,4 @@
-# Xamarin UCE Handler
+# Xamarin UCE Handler ![version](http://img.shields.io/badge/original-v1.3-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Com.Rohitss.Uceh.UCEHandler)](https://www.nuget.org/packages/Com.Rohitss.Uceh.UCEHandler/)
 ### Android library which lets you take control of Android App's uncaught exceptions. View, Copy, Share, Save and Email exceptions details including other useful info easily.
 Tracking down all exceptions is the crucial part of the development. We could just expect that we have handled all exceptions. But whatever we do, we come across it with the so-called pop-up saying “Unfortunately, App has stopped”, that is why it is called uncaught-exceptions.
 
@@ -31,7 +31,9 @@ Add this library to your Android project and initialize it in your Application c
 
 # Setup
 
-// TODO:
+Grab the latest version from NuGet
+
+> Install-Package Com.Rohitss.Uceh.UCEHandler
 
 In your Application class:
 * Initialize library using builder pattern.
@@ -75,6 +77,13 @@ AddCommaSeparatedEmailAddresses("abc@gmail.com, pqr@gmail.com,...) | empty | Add
 
 * [**Rohit Surwase**](https://github.com/RohitSurwase) - *Initial work* - [API-Calling-Flow](https://github.com/RohitSurwase/API-Calling-Flow) , [AndroidDesignPatterns](https://github.com/RohitSurwase/AndroidDesignPatterns) , [News App Using Kotlin, MVP](https://github.com/RohitSurwase/News-Kotlin-MVP) ,  [Linkaive - Android App on Play Store](https://play.google.com/store/apps/details?id=com.rohitss.saveme)
 * [**Yauheni Pakala**](https://github.com/wcoder) - Binding library for Xamarin.Android
+
+## Development
+
+Publishing new version:
+```
+.\build.ps1 --target=Publish --NugetApiKey=<api-key> --PublishRemotely=true
+```
 
 ## License
 

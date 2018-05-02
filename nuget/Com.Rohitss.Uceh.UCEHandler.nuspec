@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.1">
     <id>Com.Rohitss.Uceh.UCEHandler</id>
-    <version>1.0.7</version>
+    <version>1.3</version>
     <title>Handling Uncaught-Exceptions in Android</title>
     <authors>Rohit Surwase</authors>
     <owners>Yauheni Pakala</owners>
@@ -20,7 +20,7 @@
   <files>
 
 	<!--Xamarin.Android-->
-	<file src="..\src\UCEHandler\bin\Release\UCEHandler.*" target="lib\MonoAndroid10" />
+	<file src="..\src\bin\Release\UCEHandler.*" target="lib\MonoAndroid10" />
 
   </files>
 </package>
